@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+export(int) var movement_speed = 200
+
+var movement = Vector2(0, 0)
+
+func move(direction: Vector2):
+	movement = direction.normalized() * movement_speed
+
+func _physics_process(delta):
+	move_and_slide(movement)
+	movement = Vector2(0, 0)
+
+func _ready():
+	set_physics_process(true)
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 7 )
+
+[node name="CharacterBase" type="KinematicBody2D"]
+position = Vector2( 54.8158, 40.1188 )
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
