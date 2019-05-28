@@ -4,8 +4,13 @@
 [ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=2]
 
 [node name="Player" instance=ExtResource( 1 )]
-movement_speed = 120
+movement_speed = 80
 
 [node name="Controller" type="Node" parent="." index="1"]
 script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+current = true
+limit_left = 0
+limit_top = 0
 
