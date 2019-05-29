@@ -67,7 +67,6 @@ func update_animation():
 
 func play_animtion(name: String):
 	if name != current_animation_name:
-		print(name)
 		current_animation_name = name
 		$AnimationPlayer.play(name)
 
