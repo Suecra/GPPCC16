@@ -1,53 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/DirectionalSprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/CharacterBase.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/CharacterSprite.tscn" type="PackedScene" id=2]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends KinematicBody2D
-
-export(int) var movement_speed = 200
-
-const LEFT_UP_START_ANGLE = -157.5
-const UP_START_ANGLE = LEFT_UP_START_ANGLE + 45
-const RIGHT_UP_START_ANGLE = UP_START_ANGLE + 45
-const RIGHT_START_ANGLE = RIGHT_UP_START_ANGLE + 45
-const RIGHT_DOWN_START_ANGLE = RIGHT_START_ANGLE + 45
-const DOWN_START_ANGLE = RIGHT_DOWN_START_ANGLE + 45
-const LEFT_DOWN_START_ANGLE = DOWN_START_ANGLE + 45
-const LEFT_START_ANGLE = LEFT_DOWN_START_ANGLE + 45
-
-var movement = Vector2(0, 0)
-var direction = Vector2(0, 1)
-var current_animation_name = \"\"
-
-func move(direction: Vector2):
-	if direction != Vector2(0, 0):
-		self.direction = direction.normalized()
-		movement = self.direction * movement_speed
-	else:
-		movement = Vector2(0, 0)
-
-func _physics_process(delta):
-	move_and_slide(movement)
-	$DirectionalSprite.moving = movement != Vector2(0, 0)
-	$DirectionalSprite.direction = direction
-	movement = Vector2(0, 0)
-
-func _ready():
-	set_physics_process(true)
-	$DirectionalSprite.direction = direction
-"
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 6 )
 
 [node name="CharacterBase" type="KinematicBody2D"]
 position = Vector2( 54.8158, 40.1188 )
-script = SubResource( 1 )
+script = ExtResource( 1 )
+movement_speed = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="DirectionalSprite" parent="." instance=ExtResource( 1 )]
+[node name="DirectionalSprite" parent="." instance=ExtResource( 2 )]
 

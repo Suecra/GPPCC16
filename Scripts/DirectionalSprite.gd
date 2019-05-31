@@ -12,8 +12,6 @@ const DOWN_START_ANGLE = RIGHT_DOWN_START_ANGLE + 45
 const LEFT_DOWN_START_ANGLE = DOWN_START_ANGLE + 45
 const LEFT_START_ANGLE = LEFT_DOWN_START_ANGLE + 45
 
-var current_animation_name = ""
-
 func set_direction(value: Vector2):
 	direction = value
 	var angle = rad2deg(direction.angle())
@@ -53,6 +51,5 @@ func set_direction(value: Vector2):
 			play_animation("left")
 
 func play_animation(name: String):
-	if name != current_animation_name:
-		current_animation_name = name
+	if name != $AnimationPlayer.current_animation:
 		$AnimationPlayer.play(name)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/SwordFighter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/AIs/UpDownController.tscn" type="PackedScene" id=2]
+
+[node name="EnemySwordFighter" instance=ExtResource( 1 )]
+movement_speed = 50
+
+[node name="Attack" parent="." index="2"]
+cooldown = 10.0
+
+[node name="UpDownController" parent="." index="3" instance=ExtResource( 2 )]
+

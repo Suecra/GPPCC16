@@ -4,7 +4,7 @@ var joypad_connected = false
 var joypad_id: int
 
 func _physics_process(delta):
-	var movement = Vector2(0, 0);
+	var movement = Vector2(0, 0)
 	
 	if joypad_connected:
 		movement = Vector2(Input.get_joy_axis(joypad_id, JOY_AXIS_0), Input.get_joy_axis(joypad_id, JOY_AXIS_1))
@@ -18,6 +18,9 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("player_right"):
 		movement.x = 1
 	controlled_object.move(movement)
+	
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		controlled_object._attack(controlled_object.get_local_mouse_position())
 
 func get_joypad():
 	var devices = Input.get_connected_joypads()
