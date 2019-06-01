@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Arrow.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/ColorInvert.tres" type="Material" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 2 )
+
+[node name="Arrow" type="KinematicBody2D"]
+script = ExtResource( 1 )
+speed = 150.0
+lifetime = 0.6
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+position = Vector2( 1.48804, 1.21748 )
+copy_mode = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="BackBufferCopy"]
+material = ExtResource( 2 )
+amount = 20
+lifetime = 2.5
+speed_scale = 5.0
+randomness = 0.5
+spread = 10.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 5.0
+scale_amount = 0.5
+scale_amount_random = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 7, 1 )
+shape = SubResource( 1 )
+

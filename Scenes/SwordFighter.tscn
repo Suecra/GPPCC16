@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/CharacterBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/SwordFighter.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Attack.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/SwordAttack.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/SwordAttack.tscn" type="PackedScene" id=4]
 
 [node name="SwordFighter" instance=ExtResource( 1 )]
@@ -10,8 +10,6 @@ script = ExtResource( 2 )
 
 [node name="Attack" type="Node2D" parent="." index="2"]
 script = ExtResource( 3 )
-damage = 1
-cooldown = 1.0
 
 [node name="DirectionalSprite" parent="Attack" index="0" instance=ExtResource( 4 )]
 
