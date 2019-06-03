@@ -1,15 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/CharacterBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/SwordFighter.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/SwordAttack.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/SwordAttack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/SwordFighterSprite.tscn" type="PackedScene" id=5]
 
 [node name="SwordFighter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+hp = 6
 
 [node name="Attack" type="Node2D" parent="." index="2"]
 script = ExtResource( 3 )
+damage = 2
+cooldown = 0.3
 
 [node name="DirectionalSprite" parent="Attack" index="0" instance=ExtResource( 4 )]
+
+[node name="DirectionalSprite" parent="." index="3" instance=ExtResource( 5 )]
 

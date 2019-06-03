@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Magic.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/ColorInvert.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Graphics/Magic.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 3 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 25.0
+
+[node name="Magic" type="KinematicBody2D"]
+script = ExtResource( 1 )
+speed = 100.0
+lifetime = 0.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="BackBufferCopy"]
+material = ExtResource( 2 )
+amount = 20
+lifetime = 0.5
+local_coords = false
+texture = ExtResource( 3 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 0.5
+scale_amount = 0.1
+scale_amount_random = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="body_detected"]
