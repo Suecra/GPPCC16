@@ -1,13 +1,15 @@
 extends KinematicBody2D
 
 export(int) var hp = 5
-export(int) var movement_speed = 200
+export(int) var movement_speed = 80
+export(float) var special_cooldown = 4.0
 
 var movement = Vector2(0, 0)
 var direction = Vector2(0, 1)
 var attacking = false
 var current_hp
 var speed_multiplier = 1
+var special_ready = true
 
 func move(direction: Vector2):
 	if direction != Vector2(0, 0):
@@ -21,6 +23,18 @@ func move(direction: Vector2):
 func _attack(direction: Vector2):
 	self.direction = direction.normalized()
 	attacking = true
+
+func special_move(direction: Vector2):
+	if special_ready:
+		_do_special_move(direction.clamped(1))
+		special_ready = false
+		get_tree().create_timer(special_cooldown).connect("timeout", self, "timeout")
+
+func _do_special_move(direction: Vector2):
+	pass
+
+func timeout():
+	special_ready = true
 
 func deal_damage(damage):
 	current_hp -= damage

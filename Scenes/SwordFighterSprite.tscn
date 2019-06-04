@@ -432,6 +432,7 @@ copy_mode = 2
 
 [node name="Sprite" type="Sprite" parent="BackBufferCopy" index="0"]
 material = ExtResource( 2 )
+use_parent_material = true
 texture = ExtResource( 3 )
 hframes = 20
 

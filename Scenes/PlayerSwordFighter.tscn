@@ -8,7 +8,6 @@
 [node name="PlayerSwordFighter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 hp = 5
-movement_speed = 200
 
 [node name="Attack" parent="." index="2"]
 cooldown = 0.5

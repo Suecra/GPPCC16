@@ -7,7 +7,6 @@
 
 [node name="Marksman" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-movement_speed = 200
 
 [node name="ArrowAttack" parent="." index="2" instance=ExtResource( 3 )]
 
