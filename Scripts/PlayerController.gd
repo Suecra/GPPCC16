@@ -23,6 +23,8 @@ func _physics_process(delta):
 		controlled_object._attack(controlled_object.get_local_mouse_position())
 	if Input.is_action_just_pressed("player_special"):
 		controlled_object.special_move(movement)
+	if Input.is_action_just_released("player_special"):
+		controlled_object._stop_special_move()
 
 func get_joypad():
 	var devices = Input.get_connected_joypads()

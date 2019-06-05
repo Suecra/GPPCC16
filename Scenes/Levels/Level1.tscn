@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/BackgroundTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Materials/ColorInvert.tres" type="Material" id=3]
 [ext_resource path="res://Assets/Tilesets/ForegroundTileset.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/EnemyMarksman.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/EnemySwordFighter.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/PlayerMarksman.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerMagician.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -33,9 +32,6 @@ tile_data = PoolIntArray( -65526, 0, 1, -65525, 0, 131074, -65524, 0, 131074, -6
 [node name="Marksman" parent="." instance=ExtResource( 5 )]
 position = Vector2( 371.267, 84.6016 )
 
-[node name="EnemySwordFighter" parent="." instance=ExtResource( 6 )]
-position = Vector2( 305.459, 76.6627 )
-
-[node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 58.777, 102.177 )
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 57.4566, 104.378 )
 
