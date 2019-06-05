@@ -41,7 +41,7 @@ func deal_damage(damage):
 	if current_hp <= 0:
 		_faint()
 	else:
-		$DamageBlink.play("Blink")
+		$DamageBlink.play("blink")
 
 func _faint():
 	get_parent().remove_child(self)
@@ -54,10 +54,13 @@ func _physics_process(delta):
 	speed_multiplier = 1
 
 func _update_graphics():
-	$DirectionalSprite.moving = movement != Vector2(0, 0)
-	$DirectionalSprite.direction = direction
+	$WhiteSprite.moving = movement != Vector2(0, 0)
+	$WhiteSprite.direction = direction
+	$BlackSprite.moving = movement != Vector2(0, 0)
+	$BlackSprite.direction = direction
 
 func _ready():
 	current_hp = hp
 	set_physics_process(true)
-	$DirectionalSprite.direction = direction
+	$WhiteSprite.direction = direction
+	$BlackSprite.direction = direction

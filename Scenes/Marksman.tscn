@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/CharacterBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Marksman.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/ArrowAttack.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MarksmanSprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BlackMarksmanSprite.tscn" type="PackedScene" id=5]
 
 [node name="Marksman" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="ArrowAttack" parent="." index="2" instance=ExtResource( 3 )]
+[node name="ArrowAttack" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="DirectionalSprite" parent="." index="3" instance=ExtResource( 4 )]
+[node name="WhiteSprite" parent="." index="2" instance=ExtResource( 4 )]
+visible = false
+
+[node name="BlackSprite" parent="." index="3" instance=ExtResource( 5 )]
+visible = false
 
