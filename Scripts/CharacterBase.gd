@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export(int) var hp = 5
-export(int) var movement_speed = 80
+export(int) var movement_speed = 60
 export(float) var special_cooldown = 4.0
 
 var movement = Vector2(0, 0)
@@ -31,6 +31,9 @@ func special_move(direction: Vector2):
 		get_tree().create_timer(special_cooldown).connect("timeout", self, "timeout")
 
 func _do_special_move(direction: Vector2):
+	pass
+
+func _stop_special_move():
 	pass
 
 func timeout():

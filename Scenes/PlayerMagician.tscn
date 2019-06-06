@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Teleporter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/PlayerDamageBlink.tscn" type="PackedScene" id=6]
 
-[node name="PlayerMagician" index="0" instance=ExtResource( 1 )]
+[node name="PlayerMagician" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 hp = 5
 
