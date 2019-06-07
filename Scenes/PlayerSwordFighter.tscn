@@ -10,9 +10,6 @@
 script = ExtResource( 2 )
 hp = 5
 
-[node name="Attack" parent="." index="1"]
-cooldown = 0.5
-
 [node name="WhiteSprite" parent="." index="2"]
 visible = true
 

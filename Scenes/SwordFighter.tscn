@@ -11,16 +11,16 @@
 script = ExtResource( 2 )
 hp = 6
 
-[node name="Attack" type="Node2D" parent="." index="2"]
+[node name="Attack" type="Node2D" parent="." index="1"]
 script = ExtResource( 3 )
 damage = 2
-cooldown = 0.3
+cooldown = 0.8
 
 [node name="DirectionalSprite" parent="Attack" index="0" instance=ExtResource( 4 )]
 
-[node name="WhiteSprite" parent="." index="3" instance=ExtResource( 5 )]
+[node name="WhiteSprite" parent="." index="2" instance=ExtResource( 5 )]
 visible = false
 
-[node name="BlackSprite" parent="." index="4" instance=ExtResource( 6 )]
+[node name="BlackSprite" parent="." index="3" instance=ExtResource( 6 )]
 visible = false
 

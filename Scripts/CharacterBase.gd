@@ -16,14 +16,19 @@ var visibility = 0.0
 func move(direction: Vector2):
 	if direction != Vector2(0, 0):
 		if not attacking:
-			self.direction = direction.normalized()
+			look(direction)
 		movement = direction * movement_speed
 		movement = movement.clamped(movement_speed)
 	else:
 		movement = Vector2(0, 0)
 
-func _attack(direction: Vector2):
+func look(direction: Vector2):
 	self.direction = direction.normalized()
+	if find_node("Vision"):
+		$Vision.rotation = direction.angle() - PI / 2
+
+func _attack(direction: Vector2):
+	look(direction)
 	attacking = true
 
 func special_move(direction: Vector2):
@@ -90,7 +95,7 @@ func get_tiles_on_current_position():
 
 func _ready():
 	current_hp = hp
-	direction = initial_direction
+	look(initial_direction)
 	set_physics_process(true)
 	$WhiteSprite.direction = direction
 	$BlackSprite.direction = direction

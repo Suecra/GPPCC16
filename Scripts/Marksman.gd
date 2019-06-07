@@ -1,6 +1,7 @@
 extends "res://Scripts/CharacterBase.gd"
 
 var in_special_move = false
+var player_spotted = false
 
 func _attack(direction: Vector2):
 	._attack(direction)
@@ -18,3 +19,11 @@ func _do_special_move(direction: Vector2):
 
 func special_move_timeout():
 	in_special_move = false
+
+func _on_Vision_body_entered(body):
+	if body.name == "Player":
+		player_spotted = true
+
+func _on_Vision_body_exited(body):
+	if body.name == "Player":
+		player_spotted = false

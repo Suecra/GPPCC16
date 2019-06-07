@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Vision" type="Area2D"]
+editor/display_folded = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -5.70445, 5.68077, 5.62693, 5.68077, 46.5409, 98.5013, -43.4016, 98.5013 )
+

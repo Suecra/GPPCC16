@@ -2,6 +2,7 @@ extends "res://Scripts/CharacterBase.gd"
 
 var in_special_move = false
 var teleport_position: Vector2
+var player_spotted = false
 
 func _attack(direction: Vector2):
 	._attack(direction)
@@ -19,3 +20,11 @@ func _stop_special_move():
 
 func teleport():
 	position += teleport_position
+
+func _on_Vision_body_entered(body):
+	if body.name == "Player":
+		player_spotted = true
+
+func _on_Vision_body_exited(body):
+	if body.name == "Player":
+		player_spotted = false
