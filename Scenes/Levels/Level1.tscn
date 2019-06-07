@@ -36,9 +36,11 @@ position = Vector2( 50.1639, 237.844 )
 
 [node name="EnemySwordFighter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 533.994, 243.831 )
+initial_direction = Vector2( -1, 0 )
 
 [node name="EnemySwordFighter2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 686.329, 225.413 )
+initial_direction = Vector2( 1, 1 )
 
 [node name="EnemySwordFighter3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 825.833, 57.199 )
