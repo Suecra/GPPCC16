@@ -8,7 +8,7 @@
 
 [node name="PlayerSwordFighter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-hp = 5
+hp = 1000
 
 [node name="WhiteSprite" parent="." index="2"]
 visible = true
@@ -19,6 +19,10 @@ visible = true
 current = true
 limit_left = 0
 limit_top = 0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
 
 [node name="Silhouette" parent="." index="6" instance=ExtResource( 4 )]
 

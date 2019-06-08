@@ -28,6 +28,8 @@ func do_debug_keys():
 	if Input.is_key_pressed(KEY_5):
 		goto_stage("Level5")
 	if Input.is_key_pressed(KEY_6):
+		goto_stage("Level6")
+	if Input.is_key_pressed(KEY_7):
 		goto_stage("TestArea")
 	if Input.is_key_pressed(KEY_F1):
 		change_player(SWORD_FIGHTER)

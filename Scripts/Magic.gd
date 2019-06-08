@@ -1,7 +1,5 @@
 extends "res://Scripts/Projectile.gd"
 
-const CharacterBase = preload("res://Scripts/CharacterBase.gd")
-
 var chased_character: PhysicsBody2D
 
 func _fire(direction):
@@ -16,7 +14,7 @@ func _physics_process(delta):
 	movement = movement.clamped(speed)
 	move_and_slide(movement)
 	for i in get_slide_count():
-		attack.hit(get_slide_collision(i).collider)
+		hit(get_slide_collision(i).collider)
 		despawn()
 		break
 

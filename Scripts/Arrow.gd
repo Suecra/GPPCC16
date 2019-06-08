@@ -10,6 +10,6 @@ func _physics_process(delta):
 	movement = movement.clamped(speed)
 	move_and_slide(movement)
 	for i in get_slide_count():
-		attack.hit(get_slide_collision(i).collider)
+		hit(get_slide_collision(i).collider)
 		despawn()
 		break

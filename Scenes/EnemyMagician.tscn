@@ -5,6 +5,7 @@
 [ext_resource path="res://Scenes/Vision.tscn" type="PackedScene" id=3]
 
 [node name="EnemyMagician" instance=ExtResource( 1 )]
+movement_speed = 50
 
 [node name="BlackSprite" parent="." index="3"]
 visible = true

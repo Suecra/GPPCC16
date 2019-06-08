@@ -54,7 +54,7 @@ func deal_damage(damage):
 		$DamageBlink.play("blink")
 
 func _faint():
-	get_parent().remove_child(self)
+	queue_free()
 
 func _physics_process(delta):
 	move_and_slide(movement * speed_multiplier)
