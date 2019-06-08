@@ -41,17 +41,5 @@ func do_debug_keys():
 func goto_stage(name: String):
 	get_tree().change_scene("res://Scenes/Levels/" + name + ".tscn")
 
-func change_player(fighter_class):
-	if player_class != fighter_class:
-		var player
-		if fighter_class == SWORD_FIGHTER:
-			player = load("res://Scenes/PlayerSwordFighter.tscn").instance()
-		elif fighter_class == MAGICIAN:
-			player = load("res://Scenes/PlayerMagician.tscn").instance()
-		elif fighter_class == MARKSMAN:
-			player = load("res://Scenes/PlayerMarksman.tscn").instance()
-		player.position = $Player.position
-		remove_child($Player)
-		player.name = "Player"
-		add_child(player)
-		player_class = fighter_class
+func change_player(fighter_class):	
+	$Player.transform_to(fighter_class)

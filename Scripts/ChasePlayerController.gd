@@ -12,8 +12,10 @@ var player_was_visible = false
 var looking_around = false
 var counter = 0.0
 var route = 0.0
+var wall_counter
 
 func _physics_process(delta):
+	player = controlled_object.get_parent().get_node("Player")
 	if is_player_visible():
 		looking_around = false
 		var position_delta = -(controlled_object.position - player.position)
@@ -34,9 +36,14 @@ func go_move_route(delta):
 	controlled_object.move(controlled_object.direction)
 	attack(delta)
 	route += controlled_object.movement_speed * delta
-	if route >= move_route_length || (controlled_object.is_on_wall() && route > 10):
+	if controlled_object.is_on_wall():
+		wall_counter += 1
+	else:
+		wall_counter = 0
+	if route >= move_route_length || (wall_counter >= 1 && route > 10):
 		turn_around()
 		route = 0
+		wall_counter = 0
 
 func attack(delta):
 	counter += delta
@@ -67,7 +74,3 @@ func turn_around():
 
 func timeout():
 	look_in_random_direction()
-
-func _enter_tree():
-	._enter_tree()
-	player = controlled_object.get_parent().get_node("Player")

@@ -48,10 +48,9 @@ func timeout():
 
 func deal_damage(damage):
 	current_hp -= damage
+	$DamageBlink.play("blink")
 	if current_hp <= 0:
 		_faint()
-	else:
-		$DamageBlink.play("blink")
 
 func _faint():
 	queue_free()

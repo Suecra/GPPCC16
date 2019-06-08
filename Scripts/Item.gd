@@ -9,4 +9,5 @@ func _ready():
 
 func body_entered(body):
 	if body.name == "Player":
+		body.transform_to(transformation)
 		queue_free()

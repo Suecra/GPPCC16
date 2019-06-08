@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/BackgroundTileset.tres" type="TileSet" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Scenes/EnemySwordFighter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/AIs/ChasePlayerController.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/EnemyMagician.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/PlayerMagician.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/EnemyMarksman.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyMarksman.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/PlayerSwordFighter.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/MagicWandItem.tscn" type="PackedScene" id=10]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 1 )
@@ -46,10 +47,7 @@ position = Vector2( 295.277, 197.365 )
 [node name="ChasePlayerController" parent="EnemyMagician" instance=ExtResource( 6 )]
 looks_around = true
 
-[node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 27.2573, 352.989 )
-
-[node name="EnemyMarksman" parent="." instance=ExtResource( 9 )]
+[node name="EnemyMarksman" parent="." instance=ExtResource( 8 )]
 position = Vector2( 278.121, 309.626 )
 initial_direction = Vector2( -1, 0 )
 
@@ -64,4 +62,10 @@ position = Vector2( 299.631, 88.8867 )
 [node name="ChasePlayerController" parent="EnemySwordFighter2" instance=ExtResource( 6 )]
 has_move_route = true
 move_after_player_lost = true
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 18.4123, 360.925 )
+
+[node name="MagicWandItem" parent="." instance=ExtResource( 10 )]
+position = Vector2( 311.705, 312.843 )
 
