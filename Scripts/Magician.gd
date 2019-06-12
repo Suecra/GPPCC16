@@ -19,7 +19,9 @@ func _stop_special_move():
 		teleport()
 
 func teleport():
-	position += teleport_position
+	var transf = Transform2D(rotation, position + teleport_position)
+	if not test_move(transf, Vector2(0, 0)) && not out_of_bounds(position + teleport_position):
+		position += teleport_position
 
 func _on_Vision_body_entered(body):
 	if body.name == "Player":

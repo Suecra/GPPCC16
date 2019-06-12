@@ -4,6 +4,8 @@ const SWORD_FIGHTER = 0
 const MAGICIAN = 1
 const MARKSMAN = 2
 
+const TELEPORT_MAX_RADIUS = 75
+
 var old_movement_speed: int
 
 func _update_graphics():
@@ -14,6 +16,8 @@ func _update_graphics():
 func _physics_process(delta):
 	if in_special_move:
 		teleport_position += movement * delta
+		if abs(teleport_position.length()) > TELEPORT_MAX_RADIUS:
+			teleport_position = teleport_position.clamped(TELEPORT_MAX_RADIUS)
 		$Teleporter.position = teleport_position
 		movement = Vector2(0, 0)
 
@@ -40,9 +44,18 @@ func transform_to(fighter_class):
 		elif fighter_class == MARKSMAN:
 			player = load("res://Scenes/PlayerMarksman.tscn").instance()
 		player.position = position
+		player.get_node("Camera2D").limit_right = $Camera2D.limit_right
+		player.get_node("Camera2D").limit_bottom = $Camera2D.limit_bottom
 		name = "Temp"
 		player.name = "Player"
-		player.owner = get_parent()
-		get_parent().add_child(player)
+		player.owner = level
+		level.add_child(player)
 		player.deal_damage(0)
 		queue_free()
+
+func _faint():
+	get_tree().reload_current_scene()
+
+func _enter_tree():
+	$Camera2D.limit_right = limit_x
+	$Camera2D.limit_bottom = limit_y

@@ -19,9 +19,18 @@ func transform_to(fighter_class):
 		elif fighter_class == MARKSMAN:
 			player = load("res://Scenes/PlayerMarksman.tscn").instance()
 		player.position = position
+		player.get_node("Camera2D").limit_right = $Camera2D.limit_right
+		player.get_node("Camera2D").limit_bottom = $Camera2D.limit_bottom
 		name = "Temp"
 		player.name = "Player"
-		player.owner = get_parent()
-		get_parent().add_child(player)
+		player.owner = level
+		level.add_child(player)
 		player.deal_damage(0)
 		queue_free()
+
+func _faint():
+	get_tree().reload_current_scene()
+
+func _enter_tree():
+	$Camera2D.limit_right = limit_x
+	$Camera2D.limit_bottom = limit_y

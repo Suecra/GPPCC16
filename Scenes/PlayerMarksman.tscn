@@ -8,7 +8,6 @@
 
 [node name="PlayerMarksman" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-hp = 1000
 
 [node name="WhiteSprite" parent="." index="2"]
 visible = true

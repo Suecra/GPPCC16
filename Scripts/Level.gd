@@ -9,10 +9,6 @@ export(int) var height
 
 var player_class = -1
 
-func _ready():
-	$Player/Camera2D.limit_right = width * 16
-	$Player/Camera2D.limit_bottom = height * 16
-
 func _physics_process(delta):
 	do_debug_keys()
 
@@ -41,5 +37,5 @@ func do_debug_keys():
 func goto_stage(name: String):
 	get_tree().change_scene("res://Scenes/Levels/" + name + ".tscn")
 
-func change_player(fighter_class):	
+func change_player(fighter_class):
 	$Player.transform_to(fighter_class)
