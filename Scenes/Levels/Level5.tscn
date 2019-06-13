@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/BackgroundTileset.tres" type="TileSet" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/EnemyMagician.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/EnemyMarksman.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/SwordItem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Music/main_theme.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/LevelTeleporter.tscn" type="PackedScene" id=12]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource( 1 )
@@ -80,4 +82,12 @@ move_after_player_lost = true
 
 [node name="SwordItem" parent="." instance=ExtResource( 10 )]
 position = Vector2( 104.531, 40.1399 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="LevelTeleporterVertically" parent="." instance=ExtResource( 12 )]
+position = Vector2( 511.483, 151.329 )
+destination_level_name = "Level6"
 
