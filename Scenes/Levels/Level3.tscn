@@ -67,6 +67,7 @@ move_after_player_lost = true
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 18.4123, 336.284 )
+initial_direction = Vector2( 1, 0 )
 
 [node name="MagicWandItem" parent="." instance=ExtResource( 10 )]
 position = Vector2( 311.705, 312.843 )
