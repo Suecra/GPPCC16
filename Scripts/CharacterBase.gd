@@ -86,7 +86,6 @@ func _physics_process(delta):
 			heal_tick = HEAL_TICK
 			if current_hp < hp:
 				current_hp += 1
-				print("heal")
 
 func _update_graphics():
 	$WhiteSprite.moving = movement != Vector2(0, 0)
