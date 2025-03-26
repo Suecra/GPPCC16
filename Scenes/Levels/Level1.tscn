@@ -63,6 +63,7 @@ position = Vector2( 55.6885, 479.914 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -15.0
 autoplay = true
 
 [node name="LevelTeleporterVertically" parent="." instance=ExtResource( 10 )]
@@ -75,4 +76,3 @@ initial_direction = Vector2( -1, 0 )
 
 [node name="ChasePlayerController" parent="EnemySwordFighter4" instance=ExtResource( 6 )]
 move_after_player_lost = true
-

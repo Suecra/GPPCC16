@@ -33,9 +33,9 @@ tile_data = PoolIntArray( -1, 4, 65537, -65536, 4, 65538, -65535, 4, 65538, -655
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -15.0
 autoplay = true
 
 [node name="PlayerSwordFighter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 270.935, 361.357 )
 initial_direction = Vector2( 0, -1 )
-

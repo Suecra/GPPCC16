@@ -8,7 +8,7 @@ func _fire(direction):
 	set_physics_process(true)
 
 func _physics_process(delta):
-	if chased_character != null:
+	if chased_character != null and chased_character.owner != null:
 		direction = chased_character.position - position
 	var movement = speed * direction
 	movement = movement.clamped(speed)

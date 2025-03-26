@@ -18,4 +18,3 @@ void fragment() {
 
 [resource]
 shader = SubResource( 1 )
-

@@ -56,9 +56,9 @@ attack_speed = 0.8
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -15.0
 autoplay = true
 
 [node name="LevelTeleporterHorizontally" parent="." instance=ExtResource( 11 )]
 position = Vector2( 41.581, 0 )
 destination_level_name = "Level5"
-

@@ -86,9 +86,9 @@ position = Vector2( 104.531, 40.1399 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = -15.0
 autoplay = true
 
 [node name="LevelTeleporterVertically" parent="." instance=ExtResource( 12 )]
 position = Vector2( 511.483, 151.329 )
 destination_level_name = "Level6"
-
